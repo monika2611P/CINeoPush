@@ -44,6 +44,29 @@
       .balken a:hover {
         text-decoration: underline; /* Unterstreichung bei Hover */
       }
+      .MainPicture {
+        width: 800px;
+        height: 400px;
+        object-fit: cover;
+        margin-left: 100px;
+      }
+      .balken2 {
+        background-color: #560192;
+        width: 100%; /* Die Breite des Balkens nimmt 100% der Breite der Webseite ein */
+        height: 10px; /* Höhe des Balkens */
+        margin: 0; /* Entfernt Abstände um den Balken herum */
+        padding: 0; /* Entfernt Füllungen im Balken */
+        box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
+        margin-top: 40px;
+      }
+      .Standort {
+        margin-top: 30px;
+        color: #ffffff; /* Textfarbe der Links */
+        text-decoration: underline;
+        font-size: 15px; /* Schriftgröße der Links */
+        font-family: "Lato", sans-serif; /*Schriftart*/
+        margin-left: 100px;
+      }
     </style>
   </head>
 
@@ -63,5 +86,11 @@
       <a href="../Sonderseiten/gastro.html">Gastro</a>
       <a href="../Sonderseiten/shop.html">Shop</a>
     </div>
+    <p class="Standort">CI Neo - Mannheim</p>
+
+    <a href="filmansicht.html">
+      <img src="../images/Digimon.jpg" alt="MainPicture" class="MainPicture" />
+    </a>
+    <div class="balken2"></div>
   </body>
 </html>
