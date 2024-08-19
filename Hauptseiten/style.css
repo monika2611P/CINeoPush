@@ -1,71 +1,122 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap");
-      body {
-        margin: 0; /* Entfernt Standardabstände*/
-        background-color: #220537;
-      }
-      .left-top {
-        height: 100px;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-      .right-top {
-        height: 100px;
-        position: absolute;
-        top: 0;
-        right: 0;
-      }
-      .balken {
-        width: 100%; /* Die Breite des Balkens nimmt 100% der Breite der Webseite ein */
-        height: 40px; /* Höhe des Balkens */
-        background-color: #560192; /* Farbe des Balkens */
-        margin: 0; /* Entfernt Abstände um den Balken herum */
-        padding: 0; /* Entfernt Füllungen im Balken */
-        box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
-        margin-top: 100px;
-        display: flex; /* Flexbox zur Anordnung der Links */
-        justify-content: right; /* Zentriert die Links horizontal */
-        align-items: center; /* Zentriert die Links vertikal */
-      }
-      .balken a {
-        color: #5afff5; /* Textfarbe der Links */
-        text-decoration: none; /* Entfernt die Unterstreichung der Links */
-        margin: 0 55px; /* Abstand zwischen den Links */
-        font-size: 25px; /* Schriftgröße der Links */
-        font-family: "Lato", sans-serif; /*Schriftart*/
-      }
-      .balken a:hover {
-        text-decoration: underline; /* Unterstreichung bei Hover */
-      }
-      .MainPicture {
-        width: 800px;
-        height: 400px;
-        object-fit: cover;
-        margin-left: 100px;
-      }
-      .balken2 {
-        background-color: #560192;
-        width: 100%; /* Die Breite des Balkens nimmt 100% der Breite der Webseite ein */
-        height: 10px; /* Höhe des Balkens */
-        margin: 0; /* Entfernt Abstände um den Balken herum */
-        padding: 0; /* Entfernt Füllungen im Balken */
-        box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
-        margin-top: 40px;
-      }
-      .Standort {
-        margin-top: 30px;
-        color: #ffffff; /* Textfarbe der Links */
-        text-decoration: underline;
-        font-size: 15px; /* Schriftgröße der Links */
-        font-family: "Lato", sans-serif; /*Schriftart*/
-        margin-left: 100px;
-        .slider-wrapper .image-list{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .slider-wrapper .image-list .image.item{
-            width: 325px;
-            height: 400px;
-            object-fit:  cover;
-        }
-      }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #220537;      
+}
+
+.container {
+  max-width: 1500px;
+  width: 95%;
+}
+
+.sliding-wrapper .image-list {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(10, 1fr);
+  font-size: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+}      
+
+.sliding-wrapper .image-list .image-item{
+    width: 800px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.image-container {
+  position: relative; /* Positionierung relativ zum übergeordneten Element */
+  display: inline-block;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%; /* Größe des Playbuttons */
+  height: 80%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Unsichtbar, solange nicht gehovered */
+  transition: opacity 0.3s ease; /* Weicher Übergang beim Hover */
+}
+
+.image-container:hover .play-button {
+  opacity: 0.8; /* Sichtbar beim Hover */
+}
+
+
+
+.sliding-wrapper .image-list::-webkit-scrollbar{
+  display: none;
+
+}
+
+
+
+
+.left-top {
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.right-top {
+  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.balken {
+  position: absolute;
+  top: 100px;
+  width: 100%; /* Die Breite des Balkens nimmt 100% der Breite der Webseite ein */
+  height: 40px; /* Höhe des Balkens */
+  background-color: #560192; /* Farbe des Balkens */
+  margin: 0; /* Entfernt Abstände um den Balken herum */
+  padding: 0; /* Entfernt Füllungen im Balken */
+  box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
+  display: flex; /* Flexbox zur Anordnung der Links */
+  justify-content: right; /* Zentriert die Links horizontal */
+  align-items: center; /* Zentriert die Links vertikal */
+}
+
+.balken a {
+  color: #5afff5; /* Textfarbe der Links */
+  text-decoration: none; /* Entfernt die Unterstreichung der Links */
+  margin: 0 55px; /* Abstand zwischen den Links */
+  font-size: 25px; /* Schriftgröße der Links */
+  font-family: "Lato", sans-serif; /*Schriftart*/
+}
+
+.balken a:hover {
+  text-decoration: underline; /* Unterstreichung bei Hover */
+}
+
+.balken2 {
+  background-color: #560192;
+  width: 100%; /* Die Breite des Balkens nimmt 100% der Breite der Webseite ein */
+  height: 10px; /* Höhe des Balkens */
+  margin: 0; /* Entfernt Abstände um den Balken herum */
+  padding: 0; /* Entfernt Füllungen im Balken */
+  box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
+  margin-top: 40px;
+  bottom: 100px;
+  position: fixed;
+}
+
+    
+
+      
