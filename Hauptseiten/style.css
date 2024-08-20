@@ -9,14 +9,50 @@
 body{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   min-height: 100vh;
-  background: #220537;      
+  background: #220537;    
 }
 
 .container {
   max-width: 1500px;
   width: 95%;
+  position: relative;
+  margin-right: 60px;
+}
+
+
+.sliding-wrapper .slide-button {
+  height: 50px;
+  width: 50px;
+  color: #fff;
+  background: none;
+  font-size: 2.2rem;
+  cursor: pointer;
+  border: none;
+  opacity: 0.6;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+.slide-button {
+  position: relative;
+}
+
+.sliding-wrapper .slide-button:hover{
+  opacity: 1;
+}
+
+.sliding-wrapper .slide-button#prev-slide{
+  left: -60px;
+
+}
+
+.sliding-wrapper .slide-button#next-slide{
+  right: -60px;
 }
 
 .sliding-wrapper .image-list {
@@ -29,6 +65,8 @@ body{
 
 }      
 
+
+
 .sliding-wrapper .image-list .image-item{
     width: 800px;
     height: 400px;
@@ -40,6 +78,7 @@ body{
   display: inline-block;
 }
 
+
 .play-button {
   position: absolute;
   top: 50%;
@@ -49,13 +88,13 @@ body{
   transform: translate(-50%, -50%);
   opacity: 0; /* Unsichtbar, solange nicht gehovered */
   transition: opacity 0.3s ease; /* Weicher Übergang beim Hover */
+  cursor: pointer;
+  
 }
 
 .image-container:hover .play-button {
   opacity: 0.8; /* Sichtbar beim Hover */
 }
-
-
 
 .sliding-wrapper .image-list::-webkit-scrollbar{
   display: none;
@@ -89,16 +128,17 @@ body{
   padding: 0; /* Entfernt Füllungen im Balken */
   box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
   display: flex; /* Flexbox zur Anordnung der Links */
-  justify-content: right; /* Zentriert die Links horizontal */
+  justify-content: center; /* Zentriert die Links horizontal */
   align-items: center; /* Zentriert die Links vertikal */
 }
 
 .balken a {
   color: #5afff5; /* Textfarbe der Links */
   text-decoration: none; /* Entfernt die Unterstreichung der Links */
-  margin: 0 55px; /* Abstand zwischen den Links */
-  font-size: 25px; /* Schriftgröße der Links */
+  margin: 0 7%; /* Abstand zwischen den Links */
+  font-size: 30px; /* Schriftgröße der Links */
   font-family: "Lato", sans-serif; /*Schriftart*/
+  font-weight: bold;
 }
 
 .balken a:hover {
@@ -115,6 +155,34 @@ body{
   margin-top: 40px;
   bottom: 100px;
   position: fixed;
+}
+
+.balken3 {
+  background-color:#220537;
+  width: 100%; /* Die Breite des Balkens nimmt 100% der Breite der Webseite ein */
+  height: 100px; /* Höhe des Balkens */
+  margin: 0; /* Entfernt Abstände um den Balken herum */
+  padding: 0; /* Entfernt Füllungen im Balken */
+  box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
+  margin-top: 0px;
+  bottom: 0px;
+  position: fixed;
+  display: flex; /* Flexbox zur Anordnung der Links */
+  justify-content: center; /* Zentriert die Links horizontal */
+  align-items: top; /* Zentriert die Links vertikal */
+}
+
+.balken3 a {
+  color: #ffffff; /* Textfarbe der Links */
+  text-decoration: none; /* Entfernt die Unterstreichung der Links */
+  margin: 0 5%; /* Abstand zwischen den Links */
+  font-size: 30px; /* Schriftgröße der Links */
+  font-family: "Lato", sans-serif; /*Schriftart*/
+  font-weight: bold;
+}
+
+.balken3 a:hover {
+  text-decoration: underline; /* Unterstreichung bei Hover */
 }
 
     
