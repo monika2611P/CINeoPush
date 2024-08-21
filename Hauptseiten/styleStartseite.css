@@ -69,8 +69,8 @@ body{
 
 
 .sliding-wrapper .image-list .image-item{
-    width: 800px;
-    height: 400px;
+    width: 90vh;
+    height: 45vh;
     object-fit: cover;
 }
 
