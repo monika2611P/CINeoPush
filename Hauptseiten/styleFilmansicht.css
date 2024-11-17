@@ -1,0 +1,402 @@
+body {
+    display: flex;
+    flex-direction: column;
+    /* Vertikale Anordnung */
+    justify-content: flex-start;
+    /* Inhalt am oberen Rand ausrichten */
+    align-items: center;
+    /* Horizontale Zentrierung */
+    height: 100vh;
+    /* Volle Höhe des Viewports */
+    margin: 0;
+    /* Standardmargin entfernen */
+
+    overflow-y: auto;
+    /* Vertikale Scrollbar bei Bedarf anzeigen */
+    overflow-x: hidden;
+
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    /* Breite der Scrollbar */
+}
+
+/* Hintergrund der Scrollbar */
+::-webkit-scrollbar-track {
+    background: #b089f2;
+    border-radius: 10px;
+}
+
+/* Scroll-Leiste */
+::-webkit-scrollbar-thumb {
+    background: white;
+    /* Farbe der Scroll-Leiste */
+    border-radius: 10px;
+}
+
+/* Scroll-Leiste beim Hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #5afff5;
+    /* Farbe der Scroll-Leiste beim Hover */
+}
+
+
+.film-name {
+    text-align: center;
+    /* Text innerhalb des div zentrieren */
+    font-size: 1.5em;
+    font-family: "Lato", sans-serif;
+    /*Schriftart*/
+    letter-spacing: 0.12em;
+    font-weight: 1500;
+    color: white;
+    -webkit-text-stroke: 1.7px white;
+    margin-top: 1vh;
+}
+
+.arrow {
+    width: 3vw;
+    height: 4vh;
+    position: relative;
+    left: -8vw;
+}
+
+.first-line {
+    border: none;
+    border-top: 0.5px solid #5afff5;
+    width: 50vw;
+    margin: 11vh 0 0 0;
+}
+
+.second-line {
+    border: none;
+    border-top: 0.1px solid #5afff5;
+    width: 50vw;
+    margin: 5vh 0 0 0;
+    text-align: left;
+}
+
+
+.left-aligned {
+    display: flex;
+    /* Flex für die enthaltenen Elemente */
+    justify-content: flex-start;
+    /* Elemente nach links ausrichten */
+    width: 100%;
+    /* Nimmt die volle Breite ein */
+
+}
+
+.film-container.left-aligned {
+    position: absolute;
+    margin: 0;
+    display: flex;
+    /* Flex für die enthaltenen Elemente */
+    justify-content: flex-start;
+    /* Elemente nach links ausrichten */
+    width: 100%;
+    /* Nimmt die volle Breite ein */
+}
+
+.film-inhalt {
+    font-family: "Lato", sans-serif;
+    /*Schriftart*/
+    font-size: 0.9em;
+    font-weight: 1500;
+    line-height: 1.5;
+    color: white;
+    -webkit-text-stroke: 0.5px white;
+}
+
+
+.film-inhalt h1 {
+    margin: 5vh 0 0 3vw;
+}
+
+.film-inhalt p {
+    max-width: 35em;
+    min-width: 45vw;
+    font-weight: 100;
+    margin: 2vh 0 3vh 3vw;
+    font-size: 1.25em;
+}
+
+
+.short-text {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.movie-time.hidden {
+    display: none;
+}
+
+#extra-table.hidden {
+    display: none;
+}
+
+
+.inhalt-button {
+    margin-left: 3vw;
+    padding: 5px 40px;
+    background-color: #560192;
+    border-radius: 90px;
+    border: none;
+    color: #5afff5;
+    -webkit-text-stroke: 0.5px #5afff5;
+    font-size: 1.2em;
+    font-family: "Lato", sans-serif;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px #000000;
+}
+
+.fallguy-cover {
+    /* position: absolute;*/
+    width: 21vw;
+    min-width: 20vw;
+    max-height: 55vh;
+    /*margin: 5vh 0 0 2vw;*/
+    margin: 5vh 0 0 -15vw;
+    border-radius: 1em;
+    border: 0.025vh solid #5afff5;
+}
+
+.vertical-line {
+    border: none;
+    border-left: 0.01vw solid #5afff5;
+    margin: 5vh 0 0 4vw;
+    height: auto;
+}
+
+
+.film-angaben {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10vh 0 0 61vw;
+    gap: 5vh;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    font-family: "Lato", sans-serif;
+    font-weight: 1500;
+    font-size: 1.4em;
+    -webkit-text-stroke: 0.5px #5afff5;
+    color: #5afff5;
+    gap: 0.5vw;
+
+}
+
+.info-item span {
+    font-size: 1.2em;
+    letter-spacing: 0.17em;
+    -webkit-text-stroke: 1.9px #5afff5;
+    padding: 16px 18px;
+    background-color: #560192;
+    border-radius: 50px;
+
+}
+
+.info-item img {
+    width: 3vw;
+    height: auto;
+}
+
+.movie-time {
+    display: block;
+    font-family: "Lato", sans-serif;
+    color: white;
+    -webkit-text-stroke: 0.5px white;
+    border-spacing: 5px 0;
+    border-collapse: separate;
+    width: 45vw;
+    max-height: 10vh;
+    font-weight: 100;
+    margin: 4vh 0 3vh 3vw;
+}
+
+
+.movie-time th,
+.movie-time td {
+    width: 11em;
+}
+
+.movie-time th {
+    background-color: rgb(90, 255, 245, 0.6);
+    border-radius: 20px 20px 0 0;
+    padding: 4px;
+    font-size: 1.25em;
+}
+
+
+
+.movie-time .room {
+    font-size: 1em;
+    background: linear-gradient(to right, rgb(86, 1, 146, 0.8), rgb(86, 1, 146, 0.1));
+    padding: 4px;
+    height: 1.7em;
+}
+
+.movie-time .time {
+    text-align: center;
+    font-size: 1.2em;
+    background: linear-gradient(to right, rgb(124, 59, 218), rgb(110, 76, 149), rgba(66, 41, 87, 255));
+    padding: 6px;
+    height: 2em;
+}
+
+.movie-time .time.empty-column,
+.movie-time .room.empty-column {
+    background: linear-gradient(to right, rgb(124, 59, 218), rgb(110, 76, 149), rgba(66, 41, 87, 255));
+
+}
+
+#extra-table {
+    margin-top: 12vh;
+    /* display: none;*/
+
+}
+
+
+.table-button {
+    position: absolute;
+    margin: -5vh 0 0 44vw;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(90, 255, 245, 0.5);
+    font-family: "Lato", sans-serif;
+    font-size: 1.25em;
+    font-weight: 500;
+    -webkit-text-stroke: 1px white;
+    color: white;
+    padding: 13px;
+    cursor: pointer;
+}
+
+.people {
+    margin: 15vh 0 60vh -68vw;
+    display: block;
+    font-family: "Lato", sans-serif;
+    font-weight: 1500;
+    color: #5afff5;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5;
+    -webkit-text-stroke: 0.5px #5afff5;
+    letter-spacing: 0.3em;
+}
+
+.regie {
+    margin-bottom: 3vh;
+}
+
+.trailer-image {
+    display: flex;
+    position: relative;
+    margin: -25vh 0 0 35vw;
+    height: 38vh;
+    max-height: 40;
+    width: auto;
+    border-radius: 20px;
+    z-index: 1;
+    filter: brightness(50%) grayscale(10%);
+    border: 2px solid #5afff5;
+}
+
+.trailer-button {
+    display: flex;
+    margin: -82vh 0 0 -5vw;
+    position: relative;
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-size: 2em;
+    -webkit-text-stroke: 2px white;
+    letter-spacing: 0.15em;
+    background: linear-gradient(to right, #b4e2f2, #b089f2);
+    padding: 1em;
+    border-radius: 100px;
+    z-index: 2;
+    text-decoration: none;
+    box-shadow: 2px 2px 10px #22003b;
+}
+
+.third-line {
+    border: none;
+    border-top: 0.1px solid #5afff5;
+    width: 50vw;
+    margin: 13vh 0 15vh 0;
+    text-align: left;
+}
+
+.tickets-und-rezi {
+    display: flex;
+    justify-content: space-between;
+    /* Platziert die Elemente nebeneinander */
+    position: relative;
+    /* Ermöglicht die Positionierung der Elemente über dem Balken */
+    gap: 8vw;
+    margin-bottom: 50vh;
+    margin: 0 5vw 0 5vw;
+}
+
+.ticket-button {
+    display: flex;
+    align-self: flex-start;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    background: linear-gradient(to right, rgb(124, 59, 218), rgb(110, 76, 149), rgba(66, 41, 87, 255));
+    padding: 1em;
+    font-family: "Lato", sans-serif;
+    font-size: 3em;
+    -webkit-text-stroke: 3px white;
+    letter-spacing: 0.15em;
+    border-radius: 100px;
+    margin-bottom: 20vh;
+}
+
+.ticket-button .ticket-icon {
+    margin-left: 1.5vw;
+}
+
+.rezensionen-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-self: flex-end;
+    width: 40vw;
+    height: 50vh;
+    background-color: #560192;
+    border-radius: 30px;
+    margin-bottom: 20vh;
+    padding: 0 1vw 2vh 1vw;
+}
+
+.rezi-header {
+    text-align: left;
+    font-family: "Lato", sans-serif;
+    font-size: 1.5em;
+    -webkit-text-stroke: 2px #b089f2;
+    letter-spacing: 0.15em;
+    color: #b089f2;
+    margin: 2vh 0 1.5vh 1vw;
+}
+
+.rezi-content {
+    background-color: #b089f2;
+    width: 100%;
+    height: 100%;
+    padding: 1vh 1vw;
+    border-radius: 0 0 30px 30px;
+}
