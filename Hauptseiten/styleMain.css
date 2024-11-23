@@ -63,8 +63,9 @@
     margin: 0; /* Entfernt Abstände um den Balken herum */
     padding: 0; /* Entfernt Füllungen im Balken */
     box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
-    bottom: 10vh;
+    bottom: 9vh;
     position: fixed;
+    z-index: 10;
   }
   
   .balken3 {
@@ -74,12 +75,12 @@
     margin: 0; /* Entfernt Abstände um den Balken herum */
     padding: 0; /* Entfernt Füllungen im Balken */
     box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
-    margin-top: 0px;
     bottom: 0px;
     position: fixed;
     display: flex; /* Flexbox zur Anordnung der Links */
     justify-content: center; /* Zentriert die Links horizontal */
     align-items: top; /* Zentriert die Links vertikal */
+    z-index: 10;
   }
   
   .balken3 a {
