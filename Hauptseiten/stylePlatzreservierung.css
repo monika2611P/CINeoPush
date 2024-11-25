@@ -162,10 +162,8 @@ body{
     font-size: 2vh; /* SchriftgrÃ¶ÃŸe an BildschirmhÃ¶he angepasst */
     width: 7.5vw;
     height: 2.5vh;
-    z-index: 999;
-    /* Horizontale Zentrierung des Texts */
+    z-index: 999; /*höchste Ebene*/
     text-align: center;
-    /* Vertikale Zentrierung des Texts */
     display: flex;
     justify-content: center;
     align-items: center;
