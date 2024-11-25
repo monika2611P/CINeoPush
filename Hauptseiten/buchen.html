@@ -1,34 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CINeo - Tickets Buchen</title>
     <link rel="stylesheet" href="styleMain.css" />
     <link rel="stylesheet" href="styleBuchen.css" />
-</head>
+  </head>
 
-<body>
-
+  <body>
     <a href="startseite.html">
-        <img src="../images/CINeoLogo.png" alt="CINeoLogo" class="left-top" />
-      </a>
-  
-      <a href="../Sonderseiten/login.html">
-        <img src="../images/Account.png" alt="Account" class="right-top" />
-      </a>
-  
-      <div class="balken">
-        <a href="programmauswahl.html">Programm</a>
-        <a href="../Sonderseiten/specials.html">Specials</a>
-        <a href="../Sonderseiten/angebote.html">Angebote</a>
-        <a href="../Sonderseiten/gastro.html">Gastro</a>
-        <a href="../Sonderseiten/shop.html">Shop</a>
+      <img src="../images/CINeoLogo.png" alt="CINeoLogo" class="left-top" />
+    </a>
+
+    <a href="../Sonderseiten/login.html">
+      <img src="../images/Account.png" alt="Account" class="right-top" />
+    </a>
+
+    <div class="Überschrift">
+      <div style="font-size: 40px; font-family: 'Curlz MT'; color: white">
+        TICKETS BUCHEN
       </div>
+    </div>
 
-      <div class="balken2"> </div>
+    <div class="balken">
+      <a href="programmauswahl.html">Programm</a>
+      <a href="../Sonderseiten/specials.html">Specials</a>
+      <a href="../Sonderseiten/angebote.html">Angebote</a>
+      <a href="../Sonderseiten/gastro.html">Gastro</a>
+      <a href="../Sonderseiten/shop.html">Shop</a>
+    </div>
 
-    <div class="balken3"> 
+    <div class="Ticketinfo-container">
+      <div style="font-size: 20px; color: white">Ticketinformationen</div>
+    </div>
+
+    <div class="Ticketanzahl-container">
+      <div style="font-size: 20px; color: white">Ticketanzahl</div>
+    </div>
+
+    <div class="Platzinformationen-container">
+      <div style="font-size: 20px; color: white">Platzinformationen</div>
+    </div>
+
+    <div class="Tiinfo-container">
+      <div style="font-size: 20px; color: white">n</div>
+    </div>
+
+    <div class="Platzreservierung-container">
+      <a href="platzreservierung.html" style="font-size: 20px; color: black">
+        zur Platzreservierung
+      </a>
+    </div>
+
+    <div class="Gesamtpreis-container">
+      <div style="font-size: 20px; color: white">Gesamtpreis:</div>
+    </div>
+
+    <div class="Gutscheincode-container">
+      <div style="font-size: 20px; color: white">Gutscheincode:</div>
+    </div>
+
+    <div class="input-container">
+      <input
+        type="text"
+        id="gutscheinInput"
+        placeholder="Gutscheincode"
+        required
+      />
+      <button id="einloesenButton">Einlösen</button>
+    </div>
+
+    <div class="Preis-container">
+      <h2 id="Preis" style="color: white; font-size: 24px">0.00€</h2>
+    </div>
+
+    <div class="Bezahlvorgang-container">
+      <a href="bezahlen.html" style="font-size: 20px; color: black">
+        zum Bezahlvorgang
+      </a>
+    </div>
+
+    <div class="balken2"></div>
+
+    <div class="balken3">
       <a href="../Nebenseiten/unserKino.html">Unser Kino</a>
       <a href="../Nebenseiten/kontakt.html">Kontakt</a>
       <a href="../Nebenseiten/ueberUns.html">Über Uns</a>
@@ -37,5 +92,132 @@
       <a href="../Nebenseiten/rechtliches.html">Rechtliches</a>
     </div>
 
-</body>
+    <div class="Tiauswahl-container">
+      <div class="ticket-selection">
+        <!-- <h1>Kino Ticket Auswahl</h1> -->
+
+        <div class="ticket" id="vipTicket">
+          <h2>VIP</h2>
+          <h2>16.00€</h2>
+          <div class="counter">
+            <button onclick="updateCount('vip', -1)">-</button>
+            <span id="vipCount">0</span>
+            <button onclick="updateCount('vip', 1)">+</button>
+          </div>
+        </div>
+
+        <div class="ticket" id="adultTicket">
+          <h2>Erwachsener</h2>
+          <h2>14.00€</h2>
+          <div class="counter">
+            <button onclick="updateCount('adult', -1)">-</button>
+            <span id="adultCount">0</span>
+            <button onclick="updateCount('adult', 1)">+</button>
+          </div>
+        </div>
+
+        <div class="ticket" id="childTicket">
+          <h2>Kind</h2>
+          <h2>8.00€</h2>
+          <div class="counter">
+            <button onclick="updateCount('child', -1)">-</button>
+            <span id="childCount">0</span>
+            <button onclick="updateCount('child', 1)">+</button>
+          </div>
+        </div>
+
+        <div class="ticket" id="studentTicket">
+          <h2>Student</h2>
+          <h2>10.00€</h2>
+          <div class="counter">
+            <button onclick="updateCount('student', -1)">-</button>
+            <span id="studentCount">0</span>
+            <button onclick="updateCount('student', 1)">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const ticketPrices = {
+        vip: 16.0,
+        adult: 14.0,
+        child: 8.0,
+        student: 10.0,
+      };
+
+      const ticketCounts = {
+        vip: 0,
+        adult: 0,
+        child: 0,
+        student: 0,
+      };
+
+      function updateCount(ticketType, change) {
+        ticketCounts[ticketType] += change;
+        if (ticketCounts[ticketType] < 0) {
+          ticketCounts[ticketType] = 0; // Negative Zahlen verhindern
+        }
+        document.getElementById(ticketType + "Count").innerText =
+          ticketCounts[ticketType];
+        calculatePrice();
+      }
+
+      function calculatePrice() {
+        let totalPrice = 0.0;
+        for (const [type, count] of Object.entries(ticketCounts)) {
+          totalPrice += count * ticketPrices[type];
+        }
+        /* document.getElementById('totalPrice').innerText = `Gesamtpreis: ${totalPrice}€`; */
+        document.getElementById("Preis").innerText = `${totalPrice
+          .toFixed(2)
+          .replace(",", ".")}€`;
+      }
+
+      // Beispiel für gültige Gutscheincodes
+      const gültigeGutscheine = {
+        GUTSCHEIN5: 5, // 5% Rabatt
+        GUTSCHEIN10: 10, // 10% Rabatt
+        GUTSCHEIN20: 20, // 20% Rabatt
+      };
+
+      let istGutscheinEingelöst = false;
+
+      document
+        .getElementById("einloesenButton")
+        .addEventListener("click", einloesen);
+      document
+        .getElementById("gutscheinInput")
+        .addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            einloesen();
+          }
+        });
+
+      function einloesen() {
+        if (istGutscheinEingelöst) {
+          alert(
+            "Ein Gutscheincode wurde bereits angewendet. Bitte entfernen Sie den aktuellen Gutschein, um einen neuen einzugeben."
+          );
+          return; // Beenden Sie die Funktion, wenn bereits ein Gutschein verwendet wurde
+        }
+        const gutscheincode = document.getElementById("gutscheinInput").value;
+        const rabatt = gültigeGutscheine[gutscheincode.toUpperCase()]; // Gutscheincode wird in Großbuchstaben umgewandelt
+
+        if (rabatt) {
+          const gesamtpreis = parseFloat(
+            document.getElementById("Preis").innerText.replace("€", "")
+          );
+          const neuerPreis = gesamtpreis - gesamtpreis * (rabatt / 100);
+          document.getElementById("Preis").innerText = `${Math.floor(
+            neuerPreis
+          )}€`; // Neuen Preis anzeigen
+          alert(`Gutscheincode erfolgreich eingelöst! Sie sparen ${rabatt}%!`);
+          istGutscheinEingelöst = true;
+        } else {
+          alert("Ungültiger Gutscheincode.");
+        }
+      }
+    </script>
+  </body>
 </html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CINeo - Bezahlen</title>
+    <!-- <link rel="icon" href="Desktop\CINeoLogo.png" type="image/png"> -->
+    <link rel="stylesheet" href="styleFilmansicht.css" />
+    <link rel="stylesheet" href="styleBezahlen.css" />
+  </head>
+
+  <body>
+    <a href="startseite.html">
+      <img src="../images/CINeoLogo.png" alt="CINeoLogo" class="left-top" />
+    </a>
+
+    <a href="../Sonderseiten/login.html">
+      <img src="../images/Account.png" alt="Account" class="right-top" />
+    </a>
+
+    <div class="Überschrift">
+      <div style="font-size: 40px; font-family: 'Curlz MT'; color: white">
+        BEZAHLEN
+      </div>
+    </div>
+
+    <div class="balken">
+      <a href="programmauswahl.html">Programm</a>
+      <a href="../Sonderseiten/specials.html">Specials</a>
+      <a href="../Sonderseiten/angebote.html">Angebote</a>
+      <a href="../Sonderseiten/gastro.html">Gastro</a>
+      <a href="../Sonderseiten/shop.html">Shop</a>
+    </div>
+
+    <div class="Ticketinfo-container">
+      <div style="font-size: 20px; color: white">Ticketinformationen</div>
+    </div>
+
+    <div class="PersönlicheDaten-container">
+      <div style="font-size: 20px; color: white">Persönliche Daten</div>
+    </div>
+
+    <div class="Persö-container">
+      <div class="name-container">
+        <input type="text" id="NachnameInput" placeholder="Nachname" required />
+        <input type="text" id="VornameInput" placeholder="Vorname" required />
+      </div>
+      <div class="StraHaus-container">
+        <input type="text" id="StraßeInput" placeholder="Straße" required />
+        <input
+          type="text"
+          id="HausnummerInput"
+          placeholder="Hausnummer"
+          required
+        />
+      </div>
+      <div class="plz-ort-container">
+        <input
+          type="text"
+          id="PostleitzahlInput"
+          placeholder="Postleitzahl"
+          required
+        />
+        <input type="text" id="OrtInput" placeholder="Ort" required />
+      </div>
+      <div class="Telemail-container">
+        <input
+          type="text"
+          id="TelefonnummerInput"
+          placeholder="Telefonnummer"
+          required
+        />
+        <input
+          type="text"
+          id="EmailAdresseInput"
+          placeholder="Email-Adresse"
+          required
+        />
+      </div>
+    </div>
+
+    <!--
+  <div class="tickanz-container">
+  <div style="font-size: 20px; color: white;"></div>
+</div>
+-->
+    <div class="ticketanzahl-container">
+      <div style="font-size: 20px; color: white">Ticketanzahl</div>
+    </div>
+
+    <div class="Tiinfo-container">
+      <div style="font-size: 20px; color: white">n</div>
+    </div>
+
+    <div class="Bestätigen-container">
+      <a
+        href="buchungerfolgreich.html"
+        style="font-size: 20px; font-weight: bold; color: black"
+      >
+        Bestätigen
+      </a>
+    </div>
+
+    <div class="Gesamtpreis-container">
+      <div style="font-size: 20px; color: white">Gesamtpreis:</div>
+    </div>
+
+    <!--
+<div class="input-container">
+  <input type="text" id="gutscheinInput" placeholder="Gutscheincode" required>
+  <button id="einloesenButton">Einlösen</button>
+</div> -->
+
+    <div class="Preis-container">
+      <h2 id="Preis" style="color: white; font-size: 24px">0.00€</h2>
+    </div>
+
+    <div class="Bezahlvorgang-container">
+      <a href="bezahlen.html" style="font-size: 20px; color: black">
+        zum Bezahlvorgang
+      </a>
+    </div>
+
+    <div class="balken2"></div>
+
+    <div class="balken3">
+      <a href="../Nebenseiten/unserKino.html">Unser Kino</a>
+      <a href="../Nebenseiten/kontakt.html">Kontakt</a>
+      <a href="../Nebenseiten/ueberUns.html">Über Uns</a>
+      <a href="../Nebenseiten/karriere.html">Karriere</a>
+      <a href="../Nebenseiten/information.html">Information</a>
+      <a href="../Nebenseiten/rechtliches.html">Rechtliches</a>
+    </div>
+
+    <div class="ticket-selection">
+      <div class="ticket" id="vipTicket">
+        <h2>VIP</h2>
+        <h2>16.00€</h2>
+      </div>
+
+      <div class="ticket" id="adultTicket">
+        <h2>Erwachsener</h2>
+        <h2>14.00€</h2>
+      </div>
+
+      <div class="ticket" id="childTicket">
+        <h2>Kind</h2>
+        <h2>8.00€</h2>
+      </div>
+
+      <div class="ticket" id="studentTicket">
+        <h2>Student</h2>
+        <h2>10.00€</h2>
+      </div>
+    </div>
+
+    <script>
+      function updateCount(ticketType, change) {
+        ticketCounts[ticketType] += change;
+        if (ticketCounts[ticketType] < 0) {
+          ticketCounts[ticketType] = 0; // Negative Zahlen verhindern
+        }
+        document.getElementById(ticketType + "Count").innerText =
+          ticketCounts[ticketType];
+        calculatePrice();
+      }
+
+      function calculatePrice() {
+        let totalPrice = 0.0;
+        for (const [type, count] of Object.entries(ticketCounts)) {
+          totalPrice += count * ticketPrices[type];
+        }
+        /* document.getElementById('totalPrice').innerText = `Gesamtpreis: ${totalPrice}€`; */
+        document.getElementById("Preis").innerText = `${totalPrice
+          .toFixed(2)
+          .replace(",", ".")}€`;
+      }
+    </script>
+  </body>
+</html>

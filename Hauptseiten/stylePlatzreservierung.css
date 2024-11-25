@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #220537;
+}
+
+.containerP {
+    width: 60vw;
+    height: 60vh;
+    position: relative;
+    margin: auto;
+    background-color: #5afff5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.leinwand {
+    background-color: #560192;
+    width: 59.8vw;
+
+    height: 4vh; /* HÃ¶he des Balkens */
+    margin: 0.1vw;
+    padding: 0; /* Entfernt FÃ¼llungen im Balken */
+    box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leinwand p {
+    color: #5afff5;
+    text-decoration: none; /* Entfernt die Unterstreichung der Links */
+    font-size: 2.5vh; /* SchriftgrÃ¶ÃŸe der Links */
+    font-family: "Book Antiqua", "Lato", sans-serif ;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+}
+
+.door {
+    position: absolute;
+    bottom: 10vh;
+    right: 0;
+    transform: translateY(-50%);
+    width: 2vw; /* Beispielbreite fÃ¼r die TÃ¼r */
+    height: 4vh; /* BeispielhÃ¶he fÃ¼r die TÃ¼r */
+    background-color: aliceblue; /* Beispiel-Hintergrundfarbe */
+    z-index: 10;
+    display: flex;
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    text-align: center; /* Falls der Text auf mehrere Zeilen geht */
+    border-top-left-radius: 1vh; /* Abrundung der oberen linken Ecke */
+    border-bottom-left-radius: 1vh; /* Abrundung der unteren linken Ecke */
+}
+
+.door p {
+    color: #220537;
+    text-decoration: none; /* Entfernt die Unterstreichung der Links */
+    font-size: 2vh; /* SchriftgrÃ¶ÃŸe der Links */
+    font-family: "Book Antiqua", "Lato", sans-serif ;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+}
+
+.platzContainerStandard {
+    display: flex;
+    flex-wrap: wrap; /* Erlaubt Umbruch in die nÃ¤chste Reihe */
+    gap: 0.1vh 0.15vw; /* Abstand zwischen den Boxen horizontal und vertikal */
+    margin-right: 1vw;
+    width: 100%;
+}
+
+.platzContainerS {
+    display: flex;
+    flex-wrap: wrap; /* Erlaubt Umbruch in die nÃ¤chste Reihe */
+    gap: 0.1vh 0.15vw; /* Abstand zwischen den Boxen horizontal und vertikal */
+    margin-bottom: 0.9vh;
+    margin-right: 1vw;
+    width: 100%;
+}
+
+.platzContainer {
+    display: flex;
+    flex-wrap: wrap; /* Erlaubt Umbruch in die nÃ¤chste Reihe */
+    gap: 0.1vh 0.15vw; /* Abstand zwischen den Boxen horizontal und vertikal */
+    margin-right: 0.1vw;
+    margin-bottom: 0.9vh;
+    width: 100%;
+    padding-right: 2.5%
+}
+
+.platzContainerStandard.platzContainerS {
+    margin: 0;
+}
+
+.platzContainer:nth-child(n), .platzContainerS:nth-child(n), .platzContainerStandard:nth-child(n) {
+    margin-left: 1vw;
+}
+
+.platzContainer:nth-child(2n) {
+    margin-left: 2.5vw;
+}
+
+.standardPlatz, .premiumPlatz, .rollstuhlPlatz, .begleitungPlatz {
+    width: 3vw;
+    height: 4vh; /* HÃ¶he der Rechtecke */
+
+    box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
+    position: relative;
+}
+
+.standardPlatz {
+    background-color: #220537;
+    top: 1.7vh;
+}
+
+
+.premiumPlatz {
+    background-color: #560192;
+    top: 6vh;
+
+}
+
+.rollstuhlPlatz {
+    border: thick solid #220537;
+    top: 6vh;
+}
+
+.begleitungPlatz {
+    border: thick solid #220537;
+    top: 6vh;
+    background-color: #560192;
+}
+
+.tooltip {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+    color: #fff;
+    padding: 1vh 1.5vw; /* Abstand im Tooltip */
+    border-radius: 1.5vh; /* Runde Ecken des Tooltips */
+    font-size: 2vh; /* SchriftgrÃ¶ÃŸe an BildschirmhÃ¶he angepasst */
+    width: 7.5vw;
+    height: 2.5vh;
+    z-index: 999;
+    /* Horizontale Zentrierung des Texts */
+    text-align: center;
+    /* Vertikale Zentrierung des Texts */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.standardPlatz, .tooltip {
+    margin: 0;
+    padding: 0;
+}
+
+.balkenP {
+    position: absolute;
+    top: 10vh;
+    width: 100%; /* Die Breite des Balkens nimmt 100% der Breite der Webseite ein */
+    height: 5vh; /* HÃ¶he des Balkens */
+    background-color: #560192; /* Farbe des Balkens */
+    margin: 0; /* Entfernt AbstÃ¤nde um den Balken herum */
+    padding: 0; /* Entfernt FÃ¼llungen im Balken */
+    box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
+    display: flex; /* Flexbox zur Anordnung der Links */
+    justify-content: center; /* Zentriert die Links horizontal */
+    align-items: center; /* Zentriert die Links vertikal */
+}
+
+.balkenP p {
+    color: #5afff5; /* Textfarbe der Links */
+    text-decoration: none; /* Entfernt die Unterstreichung der Links */
+    margin: 0 5vw; /* Abstand zwischen den Links */
+    font-size: 5vh; /* SchriftgrÃ¶ÃŸe der Links */
+    font-family: "Copperplate Gothic Light", "Lato", sans-serif;
+    font-weight: bold;
+    justify-content: center;
+}

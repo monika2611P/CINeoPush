@@ -46,7 +46,7 @@ body{
   line-height: 52px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
 }
 
-.Ticketanzahl-container {
+.PersÃ¶nlicheDaten-container {
   position: fixed;
   top: 110pt;
   /*left: 390pt;*/
@@ -60,6 +60,90 @@ body{
   line-height: 50px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
 }
 
+.ticketanzahl-container {
+  position: fixed;
+  top: 110pt;
+  /*left: 390pt;*/
+  right: 25pt;
+  display: block;
+  background-color: #560192;
+  /* width: 1000px;  */
+  width: 400px;
+  height: 50px;
+  text-align: center; /* Zentriert den Text horizontal */
+  line-height: 50px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
+}
+
+
+
+
+
+
+
+
+
+.PersÃ¶-container {
+  display: flex;
+  flex-direction: column; /* Stellt sicher, dass alle Elemente untereinander angeordnet sind */
+  width: 300px; /* Breite des Containers anpassen */
+  margin: 20px; /* AuÃŸenabstand */
+  position: fixed;
+  top: 150pt;
+  right: 30vw;
+  width: 40vw;
+  height: 400px;
+
+}
+
+.name-container {
+  display: flex; /* Flexbox aktivieren fÃ¼r die Namensfelder */
+  justify-content: space-between; /* Verteilung des Raums zwischen den Eingabefeldern */
+}
+
+.StraHaus-container {
+  display: flex; /* Flexbox aktivieren fÃ¼r die Namensfelder */
+  justify-content: space-between; /* Verteilung des Raums zwischen den Eingabefeldern */
+}
+
+.plz-ort-container {
+  display: flex; /* Flexbox aktivieren fÃ¼r PLZ und Ort */
+  justify-content: space-between; /* Verteilung des Raums zwischen den Eingabefeldern */
+}
+
+.Telemail-container {
+  display: flex; /* Flexbox aktivieren fÃ¼r die Namensfelder */
+  justify-content: space-between; /* Verteilung des Raums zwischen den Eingabefeldern */
+}
+
+input {
+  width: 100%; /* Breite der Eingabefelder auf 100% setzen */
+  padding: 10px; /* Innenabstand */
+  margin: 5px 0; /* AuÃŸenabstand */
+  border: 1px solid #560192; /* Rahmen fÃ¼r die Eingabefelder */
+  /*border-radius: 5px; /* Abgerundete Ecken */
+  background-color: #560192;
+  color: white;
+
+}
+
+input::placeholder {
+  color: white; /* Beispiel: Grau fÃ¼r den Platzhaltertext */
+  opacity: 0.8; /* Stellen Sie sicher, dass die OpazitÃ¤t auf 1 gesetzt ist, um die Farbe vollstÃ¤ndig sichtbar zu machen */
+}
+
+input[type="text"] {
+  flex-basis: 48%; /* Basisbreite fÃ¼r die Eingabefelder */
+}
+
+
+
+
+
+
+
+
+
+
 .Platzreservierung-container {
   position: fixed;
   /*top: 400pt;*/
@@ -72,12 +156,6 @@ body{
   height: 50px;
   text-align: center; /* Zentriert den Text horizontal */
   line-height: 50px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
-  transition: background-color 0.3s, transform 0.3s; /* Sanfter Ãœbergang fÃ¼r Hintergrundfarbe und Skalierung */
-}
-
-.Platzreservierung-container:hover {
-  background-color: #4ac3d3; /* Hintergrundfarbe beim Hover */
-  transform: scale(1.05); /* Leichte VergrÃ¶ÃŸerung beim Hover */
 }
 
 .Gesamtpreis-container {
@@ -130,31 +208,9 @@ input {
 }
 
 input:hover {
-  background-color: #cccccc; /* Hintergrundfarbe beim Hover */
+  background-color: mediumslateblue; /* Hintergrundfarbe beim Hover */
   transform: scale(1.05); /* Leichte VergrÃ¶ÃŸerung beim Hover */
 }
-
-#einloesenButton {
-  background-color: #cccccc; /* Hintergrundfarbe */
-  color: #220537; /* Textfarbe */
-  border: none; /* Kein Rahmen */
-  /*border-radius: 5px; /* Abgerundete Ecken */
-  padding: 5px 5px; /* Innenabstand */
-  font-size: 15px; /* SchriftgrÃ¶ÃŸe */
-  cursor: pointer; /* Zeiger beim Hover */
-  transition: background-color 0.3s, transform 0.2s; /* Ãœbergangseffekte */
-}
-
-#einloesenButton:hover {
-  background-color: #5afff5; /* Hintergrundfarbe beim Hover */
-  transform: scale(1.05); /* Leichte VergrÃ¶ÃŸerung beim Hover */
-}
-
-#einloesenButton:focus {
-  outline: none; /* Entfernt den Standard-Konturenrahmen */
-  box-shadow: 0 0 5px #5afff5; /* Schatteneffekt beim Fokussieren */
-}
-
 
 
 
@@ -180,20 +236,18 @@ input:hover {
   text-align: center; /* Zentriert den Text horizontal */
   line-height: 50px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
 }
-/*
+
 .ticket h2 {
   /*display: inline-block; /* Elemente nebeneinander anzeigen */
-  /*margin-right: 100px; /* Abstand zwischen den Headern *//*
+  /*margin-right: 100px; /* Abstand zwischen den Headern */
   margin: 0;
 }
 
-/*
 .ticket h2:first-child {
-  margin-right: 250px; /* Abstand zwischen Ticketbezeichnung und Preis *//*
-}*/
+  margin-right: 50px;/*250px; /* Abstand zwischen Ticketbezeichnung und Preis */
+}
 
-
-.Bezahlvorgang-container {
+.BestÃ¤tigen-container {
   position: fixed;
   /*top: 550pt;
   /* left: 1125pt;  */
@@ -208,23 +262,41 @@ input:hover {
   transition: background-color 0.3s, transform 0.3s; /* Sanfter Ãœbergang fÃ¼r Hintergrundfarbe und Skalierung */
 }
 
-.Bezahlvorgang-container:hover {
+.BestÃ¤tigen-container:hover {
   background-color: #4ac3d3; /* Hintergrundfarbe beim Hover */
   transform: scale(1.05); /* Leichte VergrÃ¶ÃŸerung beim Hover */
 }
 
-.Platzinformationen-container {
+/*
+.Bezahlvorgang-container {
   position: fixed;
-  top: 110pt;
+  /*top: 550pt;
   /* left: 1125pt;  */
+  /*top: 80vh;
   right: 25pt;
   display: block;
+  background-color: #5afff5;
+  width: 400px;
+  height: 50px;
+  text-align: center; /* Zentriert den Text horizontal */
+  /*line-height: 50px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
+/*}
+/*
+.Ticketanzahl-container {
+  position: fixed;
+  bottom: 40vh;
+  right: /*10vw;
+  /* left: 1125pt;  */
+  /*right: 25pt;*/
+  /*display: block;
   background-color: #560192;
   width: 400px;
   height: 50px;
   text-align: center; /* Zentriert den Text horizontal */
-  line-height: 52px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
-}
+ /* line-height: 52px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
+/*}*/
+
+
 
 .Tiinfo-container {
   position: fixed;
@@ -267,28 +339,7 @@ input:hover {
   line-height: 625px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
 }
 
-.Rabatt-container {
-  position: fixed;
-  top: 535pt;
-  left: 350pt;
-  display: block;
-  background-color: #560192;
-  width: 1000px;
-  height: 120px;
-  text-align: center; /* Zentriert den Text horizontal */
-  line-height: 120px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
-}
 
-.counter {
-  position: absolute; /* ErmÃ¶glicht das Verschieben relativ zur ursprÃ¼nglichen Position */
-  /*top: 300px; /* Verschiebt den ZÃ¤hler 50px nach unten */
-  /*left: 1150px; /* Verschiebt den ZÃ¤hler 20px nach rechts */
-  left: 65vw;
-  display: flex; /* Flexbox fÃ¼r die Ausrichtung */
-  align-items: center; /* Vertikale Zentrierung */
-  justify-content: center; /* Horizontale Zentrierung */
-  font-size: 30px;
-}
 
 
 button {
@@ -377,43 +428,26 @@ button {
   text-decoration: underline; /* Unterstreichung bei Hover */
 }
 
-.ticket h2{
-  margin: 0;/*EntferntdenStandard-Margin*/
+
+
+.ticket-selection {
+  margin: 20px;
+  position: fixed; /* Setzt die Position relativ */
+  bottom: 45vh; /*2vh;/*5pt;*/
+  right: 10vw; /* 40vw; /*920px; /*1125px; /* Verschiebt den gesamten Block um 50px nach rechts */
+  color: #cccccc;
 }
+.ticket {
+  /*margin-bottom: 20px;*/
+  padding: 5px;
+  /*border: 1px solid #ccc;*/
+  border-radius: 5px;
 
-/*AbstandzwischenTicketnameundPreis*/
-.ticket h2:first-child{
-  margin-right: 8vw; /*160pt;/*VerringertdenhorizontalenAbstandzwischenTicketnameundPreis*/
+  display: flex; /* Flexbox aktivieren */
+  align-items: center; /* Vertikale Ausrichtung auf die Mitte */
+  justify-content: space-between; /* Platz zwischen den Elementen */
+  margin-bottom: 3px; /* Abstand zwischen den Ticket-Containern */
 }
-
-.ticket-selection{
-  margin: 2vw; /*20px; */
-  position:relative;/*absolute;/*fixed;/*SetztdiePositionrelativ*/
-  bottom:5vh;/*42vh;/*33vh;/*2vh;/*5pt;*/
-  right:48vw;/*40vw;/*920px;/*1125px;/*VerschiebtdengesamtenBlockum50pxnachrechts*/
-  color:#cccccc;
-}
-
-.ticket{
-  /*margin-bottom:20px;*/
-  padding:10px;
-  /*border:1pxsolid#ccc;*/
-  border-radius:5px;
-
-  display:flex;/*Flexboxaktivieren*/
-  align-items:center;/*VertikaleAusrichtungaufdieMitte*/
-  flex-direction: row;
-  justify-content:space-between;/*PlatzzwischendenElementen*/
-  margin-bottom:3vh;/*15px;/*AbstandzwischendenTicket-Containern*/
-}
-.counter{
-  /*display:flex;*/
-  align-items:center;
-  position:fixed;*/
-  right:35vw;/*1500px;*/
-
-}
-
 
 
 #totalPrice {
@@ -426,6 +460,4 @@ button {
   flex-direction: column;
   align-items: flex-start; /* Aligns items to the start */
 }
-
-
 

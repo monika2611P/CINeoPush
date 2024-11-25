@@ -1,34 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CINeo Platzreservierung</title>
     <link rel="stylesheet" href="stylePlatzreservierung.css" />
     <link rel="stylesheet" href="styleMain.css" />
-</head>
+  </head>
 
-<body>
-
+  <body>
     <a href="startseite.html">
-        <img src="../images/CINeoLogo.png" alt="CINeoLogo" class="left-top" />
-      </a>
-  
-      <a href="../Sonderseiten/login.html">
-        <img src="../images/Account.png" alt="Account" class="right-top" />
-      </a>
-  
-      <div class="balken">
-        <a href="programmauswahl.html">Programm</a>
-        <a href="../Sonderseiten/specials.html">Specials</a>
-        <a href="../Sonderseiten/angebote.html">Angebote</a>
-        <a href="../Sonderseiten/gastro.html">Gastro</a>
-        <a href="../Sonderseiten/shop.html">Shop</a>
+      <img src="../images/CINeoLogo.png" alt="CINeoLogo" class="left-top" />
+    </a>
+
+    <a href="../Sonderseiten/login.html">
+      <img src="../images/Account.png" alt="Account" class="right-top" />
+    </a>
+
+    <div class="balkenP">
+      <p>Platzauswahl</p>
+    </div>
+
+    <div class="containerP">
+      <div class="leinwand"><p>Leinwand</p></div>
+
+      <div class="door">
+        <p>Tür</p>
       </div>
 
-      <div class="balken2"> </div>
+      <div class="platzContainerStandard" id="mainContainer"></div>
 
-    <div class="balken3"> 
+      <div class="platzContainer">
+        <div class="rollstuhlPlatz"><div class="tooltip"></div></div>
+        <div class="begleitungPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+
+        <div class="begleitungPlatz"><div class="tooltip"></div></div>
+        <div class="rollstuhlPlatz"><div class="tooltip"></div></div>
+      </div>
+
+      <div class="platzContainer">
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+      </div>
+      <div class="platzContainer">
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+        <div class="premiumPlatz"><div class="tooltip"></div></div>
+      </div>
+    </div>
+    >
+    <div class="balken2"></div>
+
+    <div class="balken3">
       <a href="../Nebenseiten/unserKino.html">Unser Kino</a>
       <a href="../Nebenseiten/kontakt.html">Kontakt</a>
       <a href="../Nebenseiten/ueberUns.html">Über Uns</a>
@@ -37,5 +111,70 @@
       <a href="../Nebenseiten/rechtliches.html">Rechtliches</a>
     </div>
 
-</body>
+    <script>
+      // Anzahl der platzContainerS, die du erstellen möchtest
+      const anzahlContainer = 7;
+
+      // Hauptcontainer, in den die neuen platzContainerS eingefügt werden
+      const mainContainer = document.getElementById("mainContainer");
+
+      for (let i = 0; i < anzahlContainer; i++) {
+        // Erstelle ein neues div-Element mit der Klasse 'platzContainerS'
+        const platzContainerS = document.createElement("div");
+        platzContainerS.className = "platzContainerS";
+
+        // Hier könntest du den Container weiter anpassen, z. B. mit Inhalten oder Stilen
+
+        // Beispielhafte Platzierung von Kinder-Elementen in jedem platzContainerS
+        for (let j = 0; j < 18; j++) {
+          // 18 Plätze pro Container als Beispiel
+          const platz = document.createElement("div");
+          platz.className = "standardPlatz"; // Beispiel: Verwende verschiedene Platz-Typen hier
+
+          // Erstelle den Tooltip für diesen Platz
+          const tooltip = document.createElement("div");
+          tooltip.className = "tooltip";
+
+          // Füge den Tooltip als Kind des Platzes hinzu
+          platz.appendChild(tooltip);
+          platzContainerS.appendChild(platz);
+        }
+
+        // Füge den neuen Container in den Hauptcontainer ein
+        mainContainer.appendChild(platzContainerS);
+      }
+
+      document
+        .querySelectorAll(".platzContainer, .platzContainerS")
+        .forEach((container, containerIndex) => {
+          container
+            .querySelectorAll(
+              ".standardPlatz, .premiumPlatz, .rollstuhlPlatz, .begleitungPlatz"
+            )
+            .forEach((platz, platzIndex) => {
+              let hoverTimeout;
+
+              platz.addEventListener("mouseenter", () => {
+                hoverTimeout = setTimeout(() => {
+                  const tooltip = platz.querySelector(".tooltip");
+                  tooltip.textContent = `Reihe: ${containerIndex + 1}, Platz: ${
+                    platzIndex + 1
+                  }`;
+                  tooltip.style.display = "block";
+                  tooltip.style.opacity = "1";
+                }, 2000); // 2000 Millisekunden = 2 Sekunden
+              });
+
+              platz.addEventListener("mouseleave", () => {
+                clearTimeout(hoverTimeout);
+                const tooltip = platz.querySelector(".tooltip");
+                tooltip.style.opacity = "0";
+                setTimeout(() => {
+                  tooltip.style.display = "none";
+                }, 300); // Übereinstimmung mit der Transition-Dauer
+              });
+            });
+        });
+    </script>
+  </body>
 </html>

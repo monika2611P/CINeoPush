@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  min-height: 100vh;
+  background: #220537;
+}
+
+.container {
+  max-width: 1500px;
+  width: 60vw;
+  position: relative;
+  margin-right: 5vw;
+  height: 45vh;
+}
+.Ãœberschrift {
+  position: fixed;
+  top: 15pt;
+  left: 33vw;
+  display: block;
+  background-color: #220537;
+  width: 600px;
+  height: 50px;
+  text-align: center; /* Zentriert den Text horizontal */
+  line-height: 52px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
+}
+
+
+.left-top {
+  height: 10vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.right-top {
+  height: 10vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.balken {
+  position: absolute;
+  top: 10vh;
+  width: 100vw; /* Die Breite des Balkens nimmt 100% der Breite der Webseite ein */
+  height: 5vh; /* HÃ¶he des Balkens */
+  background-color: #560192; /* Farbe des Balkens */
+  margin: 0; /* Entfernt AbstÃ¤nde um den Balken herum */
+  padding: 0; /* Entfernt FÃ¼llungen im Balken */
+  box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
+  display: flex; /* Flexbox zur Anordnung der Links */
+  justify-content: left; /*center; /* Zentriert die Links horizontal */
+  align-items: left; /*center; /* Zentriert die Links vertikal */
+}
+
+
+
+.balken a {
+  color: #5afff5; /* Textfarbe der Links */
+  text-decoration: none; /* Entfernt die Unterstreichung der Links */
+  margin: 0 7%; /* Abstand zwischen den Links */
+  font-size: 3vh; /* SchriftgrÃ¶ÃŸe der Links */
+  font-family: "Lato", sans-serif; /*Schriftart*/
+  font-weight: bold;
+}
+
+.balken a:hover {
+  text-decoration: underline; /* Unterstreichung bei Hover */
+}
+
+.balken2 {
+  background-color: #560192;
+  width: 100vw; /* Die Breite des Balkens nimmt 100% der Breite der Webseite ein */
+  height: 2vh; /* HÃ¶he des Balkens */
+  margin: 0; /* Entfernt AbstÃ¤nde um den Balken herum */
+  padding: 0; /* Entfernt FÃ¼llungen im Balken */
+  box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
+  bottom: 10vh;
+  position: fixed;
+}
+
+.balken3 {
+  background-color:#220537;
+  width: 100%; /* Die Breite des Balkens nimmt 100% der Breite der Webseite ein */
+  height: 9vh; /* HÃ¶he des Balkens */
+  margin: 0; /* Entfernt AbstÃ¤nde um den Balken herum */
+  padding: 0; /* Entfernt FÃ¼llungen im Balken */
+  box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
+  margin-top: 0px;
+  bottom: 0px;
+  position: fixed;
+  display: flex; /* Flexbox zur Anordnung der Links */
+  justify-content: center; /* Zentriert die Links horizontal */
+  align-items: top; /* Zentriert die Links vertikal */
+}
+
+.balken3 a {
+  color: #ffffff; /* Textfarbe der Links */
+  text-decoration: none; /* Entfernt die Unterstreichung der Links */
+  margin: 0 5%; /* Abstand zwischen den Links */
+  font-size: 3vh; /* SchriftgrÃ¶ÃŸe der Links */
+  font-family: "Lato", sans-serif; /*Schriftart*/
+  font-weight: bold;
+}
+
+.balken3 a:hover {
+  text-decoration: underline; /* Unterstreichung bei Hover */
+}
+
+
+
+.Bucherfolg-container {
+  position: fixed;
+  top: 20vh;
+  /*left: 390pt;*/
+  right: 32vw;
+  display: block;
+  /*background-color: #560192;
+  /* width: 1000px;  */
+  width: 40vw;
+  height: 50px;
+  text-align: center; /* Zentriert den Text horizontal */
+  line-height: 60px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
+}
+
+.Bestpermail-container {
+  position: fixed;
+  top: 70vh;
+  /*left: 390pt;*/
+  right: 32vw;
+  display: block;
+  /*background-color: #560192;
+  /* width: 1000px;  */
+  width: 40vw;
+  height: 50px;
+  text-align: center; /* Zentriert den Text horizontal */
+  line-height: 50px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
+  opacity: 0.8;
+}
+
+.Pdfconvert-container {
+  position: fixed;
+  top: 78vh;
+  /*left: 390pt;*/
+  right: 32vw;
+  display: block;
+  /*background-color: #560192;
+  /* width: 1000px;  */
+  width: 40vw;
+  height: 50px;
+  text-align: center; /* Zentriert den Text horizontal */
+  line-height: 50px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
+  opacity: 0.8;
+}
+
+
+
+.PersÃ¶nlicheDaten-container {
+  position: fixed;
+  top: 41vh; /*270pt;*/
+  /*left: 390pt;*/
+  right: 42vw;
+  display: block;
+  background-color: #560192;
+  /* width: 1000px;  */
+  width: 20vw;
+  height: 160px;
+  text-align: center; /* Zentriert den Text horizontal */
+  line-height: 50px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
+  border: 1px solid #560192; /* Rahmen fÃ¼r die Eingabefelder */
+  border-radius: 10px; /* Abgerundete Ecken */
+}
+
+.Ticknum-container {
+  position: fixed;
+  top: 48.5vh;/*318pt;
+  /*left: 390pt;*/
+  right: 57.2vw;
+  display: block;
+  /*background-color: #560192;
+  /* width: 1000px;  */
+  width: 7vw;
+  height: 35px;
+  rotate: 270deg;
+  text-align: center; /* Zentriert den Text horizontal */
+  line-height: 35px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
+  border: 1px solid #5afff5; /* Rahmen fÃ¼r die Eingabefelder */
+  /*border-radius: 10px; /* Abgerundete Ecken */
+}
+
+.CinemaTick-container {
+  position: fixed;
+  top: 43.5vh; /*290pt;
+  /*left: 390pt;*/
+  right: 44.5vw;
+  display: block;
+  background-color: #5afff5;
+  /* width: 1000px;  */
+  width: 15vw;
+  height: 45px;
+  text-align: center; /* Zentriert den Text horizontal */
+  line-height: 45px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
+  border: 1px solid #5afff5; /* Rahmen fÃ¼r die Eingabefelder */
+  /*border-radius: 10px; /* Abgerundete Ecken */
+}
+
+.TicketTick-container {
+  position: fixed;
+  top: 50vh; /*325pt;
+  /*left: 390pt;*/
+  right: 44.5vw;
+  display: block;
+  /*background-color: #5afff5;
+  /* width: 1000px;  */
+  width: 15vw;
+  height: 45px;
+  text-align: center; /* Zentriert den Text horizontal */
+  line-height: 45px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
+  /*border: 1px solid #5afff5; /* Rahmen fÃ¼r die Eingabefelder */
+  /*border-radius: 10px; /* Abgerundete Ecken */
+}
+
+.DotsTick-container {
+  position: fixed;
+  top: 52vh; /*335pt;
+  /*left: 390pt;*/
+  right: 44.5vw;
+  display: block;
+  /*background-color: #5afff5;
+  /* width: 1000px;  */
+  width: 15vw;
+  height: 45px;
+  text-align: center; /* Zentriert den Text horizontal */
+  line-height: 45px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
+  /*border: 1px solid #5afff5; /* Rahmen fÃ¼r die Eingabefelder */
+  /*border-radius: 10px; /* Abgerundete Ecken */
+}
+
+.AdmitoneTick-container {
+  position: fixed;
+  top: 54vh; /*345pt;
+  /*left: 390pt;*/
+  right: 45vw;
+  display: block;
+  /*background-color: #5afff5;
+  /* width: 1000px;  */
+  width: 14vw;
+  height: 45px;
+  text-align: center; /* Zentriert den Text horizontal */
+  line-height: 45px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
+  /*border: 1px solid #5afff5; /* Rahmen fÃ¼r die Eingabefelder */
+  /*border-radius: 10px; /* Abgerundete Ecken */
+  display: flex; /* Flexbox aktivieren fÃ¼r die Namensfelder */
+  justify-content: space-between; /* Verteilung des Raums zwischen den Eingabefeldern */
+}
+
+.Ticknum2-container {
+  position: fixed;
+  top: 48.5vh; /*318pt;
+  /*left: 390pt;*/
+  right: 39.7vw;
+  display: block;
+  /*background-color: #560192;
+  /* width: 1000px;  */
+  width: 7vw;
+  height: 35px;
+  rotate: 90deg;
+  text-align: center; /* Zentriert den Text horizontal */
+  line-height: 35px; /* Setzt die ZeilenhÃ¶he gleich der HÃ¶he der Box fÃ¼r vertikale Zentrierung */
+  border: 1px solid #5afff5; /* Rahmen fÃ¼r die Eingabefelder */
+  /*border-radius: 10px; /* Abgerundete Ecken */
+}
