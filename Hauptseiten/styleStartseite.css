@@ -17,12 +17,20 @@ body{
 .container {
   
   max-width: 1500px;
-  width: 60vw;
+  width: 55vw;
   position: relative;
   margin-right: 5vw;
   height: 45vh;
+  border: solid white;
+ 
 }
 
+.Filmhighlight {
+  font-size: large;
+  font-family: fantasy;
+  margin-top: 10vh;
+  color: #fff;
+}
 
 .sliding-wrapper .slide-button {
   height: 50px;
@@ -70,15 +78,18 @@ body{
 
 
 .sliding-wrapper .image-list .image-item{
-    width: 90vh;
+    width: 55vh;
     height: 45vh;
     object-fit: cover;
+   
 }
 
 .image-container {
   position: relative; /* Positionierung relativ zum übergeordneten Element */
   display: inline-block;
+
 }
+
 
 
 .play-button {
@@ -104,7 +115,9 @@ body{
 }
 
 .container2 {
-  margin-right: 12vw;
+  margin-right: 8vw;
+  border: solid white;
+  border-radius: 10px;
 }
 
 
